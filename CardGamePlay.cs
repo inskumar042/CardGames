@@ -23,7 +23,7 @@ using System.Linq;
             int playercount = Convert.ToInt32(Console.ReadLine());
             if(playercount < 2)
             {
-                Console.WriteLine("Please enter a Number of  2 or more for players to play the Game. Please :");
+                Console.WriteLine("Please enter a Number of  2 or more for players to play the Game. :");
                  playercount = Convert.ToInt32(Console.ReadLine());
             }
             int cardscount = carddeck.Cards.Count;
@@ -73,14 +73,12 @@ using System.Linq;
                     //Check if Players card value is the highest
                     int point = cards[0].Number;
                     if (point > max_cardvalue)
-                    {
                         max_cardvalue = point;
 
-                    }
+                    
                     //Push the Drawn card into DiscardPile and in a discarded cards stack
                     players.DiscardPile.Push(cards[0]);
-                    // if(players.DiscardPile == null)
-
+                    
                     int playerdeckcount = players.PlayersDeck.Count + players.DiscardPile.Count;
                     DiscardedCards.Push(cards[0]);
 
@@ -89,6 +87,7 @@ using System.Linq;
                 int winnercount = 0;
                 ///Foreach players check who has the highest card value 
                 /// if the highest card value is shared by more than 1 player(this will be a draw)
+                
                 foreach (Players players in player)
                 {
                     int high_cardvalue = -1;
@@ -132,16 +131,8 @@ using System.Linq;
 
 
                         }
-                        if (players.PlayersDeck.Count == 0)
-                        {
-                            if (players.DiscardPile.Count != 0)
-                            {
-                                foreach (Card card in players.DiscardPile)
-                                    players.PlayersDeck.Add(card);
-                                players.DiscardPile.Clear();
-                                carddeck.Shuffle(players.PlayersDeck);
-                            }
-                        }
+                        
+                        players.PlayersDeckupdatefromDiscard();
 
                     }
                 }
