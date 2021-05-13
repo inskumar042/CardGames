@@ -41,7 +41,7 @@
         <li><a href="#installation">Installation</a></li>
         <li><a href="#Using-Miscrosoft-Visual-Studio-2019-editor">Using Miscrosoft Visual Studio 2019 editor</a></li>
         <li><a href="#Using-Command-Prompt">Using Command Prompt</a></li>
-        <li><a href="#Running-Applicationt">Running Application</a></li>
+        <li><a href="#Running-Application">Running Application</a></li>
       </ul>
     </li>
   </ol>
